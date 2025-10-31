@@ -1,14 +1,8 @@
-// eslint-disable-next-line no-unused-vars
-/* global output, input */
-// eslint-disable-next-line no-unused-vars
 async function main() {
-  // This is where the code you're actually experimenting with goes.
+  let name = String(await input("What is your name?: "));
+  let age = Number(await input("What is your age? [Please enter a whole number]: "));
+  let clownQuestion = String(await input("Do you like clowns? [Please enter true or false]: ")).toLowerCase();
+  let likesClowns = (clownQuestion === "true");
 
-  const prompt = "Please enter your name, or 'Exit' to quit: ";
-  let name = await input(prompt);
-
-  while (name !== "Exit") {
-    output("Hello, " + name + "!");
-    name = await input(prompt);
-  }
+  output("Hello " + name + " I see you are " + age + " years old and on the age of clowns, you answered: " + likesClowns +".");
 }
